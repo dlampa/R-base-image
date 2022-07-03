@@ -52,8 +52,7 @@ RUN useradd runr -g staff -d /home/runr -m\
     && apt-get -yqq autoremove --purge \
     && apt-get clean \
 	&& rm -rf /tmp/downloaded_packages/ /tmp/*.rds \
-	&& rm -rf /var/lib/apt/lists/* \
-    && R -q -e "install.packages(c('tidyverse'))"
+	&& rm -rf /var/lib/apt/lists/* 
 
 VOLUME /scripts
 
