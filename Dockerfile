@@ -26,7 +26,6 @@ RUN useradd runr -g staff -d /home/runr -m\
 		gsfonts \
 		gnupg2 \
         curl \
-        software-properties-common \
     && echo "Configuring locale en_US.utf8" \
     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen \
 	&& locale-gen en_US.utf8 \
@@ -34,7 +33,6 @@ RUN useradd runr -g staff -d /home/runr -m\
     && echo "Installing R" \
     && echo "deb https://cloud.r-project.org/bin/linux/ubuntu focal-cran40/" > /etc/apt/sources.list.d/cran.list \
     && apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9 \
-    && add-apt-repository ppa:c2d4u.team/c2d4u4.0+ \
     && apt-get update \
 	&& apt-get install -y --no-install-recommends \
 		littler \
@@ -57,4 +55,4 @@ RUN useradd runr -g staff -d /home/runr -m\
 
 VOLUME /scripts
 
-CMD ["R"]
+CMD ["R", "--no-save"]
