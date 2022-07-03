@@ -26,6 +26,7 @@ RUN useradd runr -g staff -d /home/runr -m\
 		gsfonts \
 		gnupg2 \
         curl \
+        software-properties-common \
     && echo "Configuring locale en_US.utf8" \
     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen \
 	&& locale-gen en_US.utf8 \
