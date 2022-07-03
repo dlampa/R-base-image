@@ -15,7 +15,6 @@ apt packages:
 	- gsfonts
 	- gnupg2
     - curl
-    - software-properties-common
 
 R packages:
 
